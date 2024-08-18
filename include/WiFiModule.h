@@ -2,6 +2,9 @@
 #define WIFI_MODULE_H
 
 #include <Arduino.h>
+#include <WiFi.h>
+
+#include "WiFiSecrets.h"
 
 class WiFiModule {
 public:

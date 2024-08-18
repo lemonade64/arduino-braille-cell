@@ -1,7 +1,4 @@
 #include "WiFiModule.h"
-#include "WiFiSecrets.h"
-
-#include <WiFi.h>
 
 WiFiClient client;
 
