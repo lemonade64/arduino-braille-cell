@@ -1,6 +1,5 @@
 #include <Arduino.h>
 
-#include <WiFi.h>
 #include <esp_wifi.h>
 #include <esp_bt.h>
 
@@ -9,10 +8,10 @@
 #include <soc/rtc_cntl_reg.h>
 #include <soc/soc.h>
 
-#include <base64.h>
 #include <string>
 
 #include "WiFiModule.h"
+#include "CameraModule.h"
 
 /**
  * @brief Puts the ESP32 into deep sleep mode.
@@ -31,6 +30,10 @@ void setup() {
   WiFiModule::connect();
   WiFiModule::setupAutoReconnect(true);
 
+  Camera::setup();
+  std::string base64String = Camera::capturePhoto();
+
+  log_e("Image Captured: %s", base64String.c_str());
 }
 
 void loop() {
