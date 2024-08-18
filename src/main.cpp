@@ -1,5 +1,6 @@
 #include <Arduino.h>
 
+#include <WiFi.h>
 #include <esp_wifi.h>
 #include <esp_bt.h>
 
@@ -12,13 +13,6 @@
 #include <string>
 
 #include "WiFiModule.h"
-
-/**
- * @brief Connects to WiFi using credentials from WiFiSecrets.h.
- * 
- * Attempts to connect to WiFi for a maximum of 10 attempts before entering deep sleep if unsuccessful.
- */
-void connectWiFi();
 
 /**
  * @brief Puts the ESP32 into deep sleep mode.
@@ -48,8 +42,7 @@ void loop() {
 
 void deepSleep()  {
   log_e("Entering Deep Sleep...");
-  WiFi.disconnect(true);
-  WiFi.mode(WIFI_OFF);
+  WiFiModule::disconnect();
   esp_wifi_stop();
 
   adc_power_release();
