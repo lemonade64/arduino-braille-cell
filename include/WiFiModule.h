@@ -6,6 +6,8 @@
 
 #include "WiFiSecrets.h"
 
+extern WiFiClient client;
+
 class WiFiModule {
 public:
     /**

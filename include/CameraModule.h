@@ -1,5 +1,5 @@
-#ifndef CAMERAMODULE_H
-#define CAMERAMODULE_H
+#ifndef CAMERA_MODULE_H
+#define CAMERA_MODULE_H
 
 #include <Arduino.h>
 #include <esp_camera.h>
@@ -16,7 +16,7 @@ public:
      * @brief Initialises and configures the ESP32 camera.
      * 
      * This method sets up the camera pins, configures the camera settings
-     * and initialises the ESP32 camera hardware.
+     * and initialises the ESP32 camera.
      */
     static void setup();
 
