@@ -15,6 +15,7 @@
 
 #include "WiFiModule.h"
 #include "CameraModule.h"
+#include "OCRModule.h"
 #include "SolenoidModule.h"
 
 /**
@@ -37,19 +38,17 @@ void setup() {
   Camera::setup();
   std::string base64String = Camera::capturePhoto();
 
-  log_e("Image Captured: %s", base64String.c_str());
-
-  const std::string ocrResult = "";
+  const std::string ocrResult = OCRModule::performOCR(base64String);
   
   SolenoidModule::setup();
   SolenoidModule::displayBraille(ocrResult);
 }
 
 void loop() {
-    delay(1000);
-    if (!WiFiModule::isConnected()) {
-        WiFiModule::reconnect();
-    }
+  delay(1000);
+  if (!WiFiModule::isConnected()) {
+    WiFiModule::reconnect();
+  }
 }
 
 void deepSleep()  {
