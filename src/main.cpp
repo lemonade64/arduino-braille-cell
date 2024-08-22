@@ -1,5 +1,8 @@
 #include <Arduino.h>
 
+#include <HTTPClient.h>
+#include <WiFiClientSecure.h>
+#include <WiFi.h>
 #include <esp_wifi.h>
 #include <esp_bt.h>
 #include <driver/adc.h>
@@ -8,9 +11,12 @@
 #include <soc/soc.h>
 #include <string>
 
+#include <ArduinoJson.h>
+
 #include "WiFiModule.h"
 #include "CameraModule.h"
 #include "OCRModule.h"
+#include "SolenoidModule.h"
 
 /**
  * @brief Puts the ESP32 into deep sleep mode.
@@ -33,6 +39,9 @@ void setup() {
   std::string base64String = Camera::capturePhoto();
 
   const std::string ocrResult = OCRModule::performOCR(base64String);
+  
+  SolenoidModule::setup();
+  SolenoidModule::displayBraille(ocrResult);
 }
 
 void loop() {
