@@ -1,7 +1,5 @@
 #include "WiFiModule.h"
 
-WiFiClient client;
-
 void WiFiModule::connect() {
     WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
     log_i("Connecting to %s", WIFI_SSID);

@@ -11,8 +11,6 @@
 #include <soc/soc.h>
 #include <string>
 
-#include <ArduinoJson.h>
-
 #include "WiFiModule.h"
 #include "CameraModule.h"
 #include "OCRModule.h"
