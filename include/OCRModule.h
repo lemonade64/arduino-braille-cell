@@ -15,7 +15,7 @@ public:
      * @brief Performs OCR on a base64 encoded image.
      * 
      * This method sends a image through base64 encoded image data to an OCR 
-     * endpoint and returns the sanitizsd text.
+     * endpoint and returns the sanitised text.
      * 
      * @param base64String Base64 encoded image data.
      * @return std::string Sanitised text result.

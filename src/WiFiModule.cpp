@@ -45,5 +45,4 @@ void WiFiModule::logConnectionStatus() {
     } else {
         log_e("Failed to connect to WiFi");
     }
-
 }

@@ -1,4 +1,3 @@
-
 #ifndef SOLENOID_MODULE_H
 #define SOLENOID_MODULE_H
 
