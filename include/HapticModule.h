@@ -8,7 +8,6 @@
  * @enum HapticEffect
  * @brief Enumeration of available haptic effects.
  */
-
 enum class HapticEffect {
   ON,
   OFF,
