@@ -11,6 +11,7 @@ void HapticModule::init() {
 
   drv.selectLibrary(1);
   drv.setMode(DRV2605_MODE_INTTRIG);
+  HapticModule::playEffect(HapticEffect::ON);
 }
 
 void HapticModule::playEffect(HapticEffect effect) {

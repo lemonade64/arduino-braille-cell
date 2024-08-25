@@ -1,4 +1,5 @@
 #include "CameraModule.h"
+#include "HapticModule.h"
 
 void Camera::setup() {
     camera_config_t config;
@@ -42,6 +43,7 @@ void Camera::setup() {
 }
 
 std::string Camera::capturePhoto() {
+    HapticModule::playEffect(HapticEffect::CAPTURE_PHOTO);
     camera_fb_t * fb = NULL;
     log_e("Capturing Image...");
 

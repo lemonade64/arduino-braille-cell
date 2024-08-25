@@ -1,4 +1,5 @@
 #include "SolenoidModule.h"
+#include "HapticModule.h"
 
 Adafruit_MCP23X17 mcp;
 
@@ -36,6 +37,7 @@ const int SolenoidModule::controlPins[6] = {1, 2, 3, 4, 5, 6};
 const char SolenoidModule::alphabet[] = "abcdefghijklmnopqrstuvwxyz";
 
 void SolenoidModule::setup() {
+    HapticModule::playEffect(HapticEffect::SOLENOID_ON);
     setupMCP23017();
     setupBraille();
 }
@@ -77,4 +79,5 @@ void SolenoidModule::displayBraille(const std::string& text) {
 
         delay(1000);
     }
+    HapticModule::playEffect(HapticEffect::SOLENOID_OFF);
 }
