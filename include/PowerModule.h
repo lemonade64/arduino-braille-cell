@@ -8,8 +8,17 @@
 
 class PowerModule {
 public:
+    /**
+     * @brief Initialises power efficient settings.
+     * 
+     * This method sets the CPU frequency to 80MHz and disables Bluetooth
+     * to reduce power consumption.
+     */
     static void init();
 
+    /**
+     * @brief Puts the device into deep sleep mode.
+     */
     static void deepSleep();
 };
 
